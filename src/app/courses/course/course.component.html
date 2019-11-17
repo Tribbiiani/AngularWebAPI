@@ -1,0 +1,23 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off"> 
+    <input type="hidden" name="CourseID" #CourseName="ngModel" [(ngModel)]="service.formData.CourseID">
+    <div class="form-group">
+        <label>Course Name</label>
+        <input name="CourseName" #CourseName="ngModel" [(ngModel)]="service.formData.CourseName"class="form-control" required>
+        <div class="validation-error" *ngIf="CourseName.invalid  && CourseName.touched">Required Field</div>
+    </div>
+    <div class="form-group">
+        <label>Code</label>
+        <input name="Code" #Code="ngModel" [(ngModel)]="service.formData.Code"class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Location</label>
+        <input name="Location" #Location="ngModel" [(ngModel)]="service.formData.Location"class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input name="Price" #Price="ngModel" [(ngModel)]="service.formData.Price"class="form-control">
+    </div>
+    <div class="form-group">
+         <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+</form> 
