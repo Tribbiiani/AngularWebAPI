@@ -9,7 +9,7 @@ export class CourseService {
 
   formData :Courses
   list : Courses[];
-  readonly rootURL ="http://localhost:60565/api"
+  readonly rootURL ="http://localhost:60565/api/course"
 
   constructor(private http : HttpClient) { }
 
@@ -34,5 +34,7 @@ export class CourseService {
    /*delete api/Course/5  use id as argument */
    deleteCourse(id :number){
     return this.http.delete(this.rootURL + '/Courses/'+id);
+   
+    
    }
 }
