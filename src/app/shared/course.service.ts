@@ -9,7 +9,7 @@ export class CourseService {
 
   formData :Courses
   list : Courses[];
-  readonly rootURL ="http://localhost:60565/api/course"
+  readonly rootURL ="http://localhost:60565/api"
 
   constructor(private http : HttpClient) { }
 
@@ -21,7 +21,7 @@ export class CourseService {
   /*GET   call WepAPI GET method returns an observable
   store in Courses[]*/
   refreshList(){
-    this.http.get(this.rootURL + '/ Courses')
+    this.http.get(this.rootURL + '/Courses')
     .toPromise().then(res => this.list = res as Courses[]);
   }
 
