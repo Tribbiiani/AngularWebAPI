@@ -11,6 +11,8 @@ export class CourseService {
   list : Courses[];
   readonly rootURL ="http://localhost:60565/api/course"
 
+ 
+  
   constructor(private http : HttpClient) { }
 
   //POST formdata to WebAPI
@@ -19,7 +21,7 @@ export class CourseService {
   }
 
   /*GET   call WepAPI GET method returns an observable
-  store in Courses[]*/
+  store in Courses[], see courselist.html*/
   refreshList(){
     this.http.get(this.rootURL + '/Courses')
     .toPromise().then(res => this.list = res as Courses[]);
@@ -34,7 +36,27 @@ export class CourseService {
    /*delete api/Course/5  use id as argument */
    deleteCourse(id :number){
     return this.http.delete(this.rootURL + '/Courses/'+id);
-   
-    
    }
+    /**Testing HomeController */
+   
+   StartConsoleOutput(){
+    this.http.get('http://localhost:60565/api/home').subscribe(response => console.log(response));
+   }
+
+    testSimple(){
+      this.http.post('http://localhost:60565/api/home/testpost', 'A simple value').subscribe(r => console.log(r));
+    }
+
+
+
+   testPostComplex(){
+     this.http.post('http://localhost:60565/api/home/testpostcomplex', {
+      name: "John",
+      surname: "Doe",
+      age: 38
+    }).subscribe(r => console.log(r));
+     
+   }
+
+
 }

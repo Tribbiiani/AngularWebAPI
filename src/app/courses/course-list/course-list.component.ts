@@ -16,11 +16,15 @@ export class CourseListComponent implements OnInit {
 
   ngOnInit() {
     this.service.refreshList();
+
+    this.service.StartConsoleOutput();
+    this.service.testPostComplex();
+    this.service.testSimple();
   }
 
   /*click on td datacell poulate form  */
   populateForm(crs : Courses){
-    this.service.formData = Object.assign({},crs);
+    this.service.formData = Object.assign({}, crs);
 
   }
 
@@ -34,6 +38,12 @@ export class CourseListComponent implements OnInit {
    }
   }
 
+/**Testing HomeController */
+
+
+  
 }
+
+
 
 
