@@ -38,12 +38,9 @@ export class CourseListComponent implements OnInit {
    }
   }
 
-/**Testing HomeController */
+/**Testing  */
 
 
-  
+
+
 }
-
-
-
-
