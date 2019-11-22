@@ -17,14 +17,14 @@ export class CourseService {
 
   //POST formdata to WebAPI
   postCourse(formData : Courses){
-   return this.http.post(this.rootURL + '/Courses',formData)
+   return this.http.post(this.rootURL + '/Courses/',formData)
   }
 
   /*GET   call WepAPI GET method returns an observable
   store in Courses[], see courselist.html*/
   refreshList(){
     this.http.get(this.rootURL + '/Courses')
-    .toPromise().then(res => this.list = res as Courses[]);
+    .subscribe(res => this.list = res as Courses[]);
   }
 
   /**PUT call WebAPI/controller PUT function Update Course, returns an observable*/
@@ -40,11 +40,11 @@ export class CourseService {
     /**Testing HomeController */
    
    StartConsoleOutput(){
-    this.http.get('http://localhost:60565/api/home').subscribe(response => console.log(response));
+    this.http.get('http://localhost:60565/api/home').subscribe(response => console.info(response));
    }
 
     testSimple(){
-      this.http.post('http://localhost:60565/api/home/testpost', 'A simple value').subscribe(r => console.log(r));
+      this.http.post('http://localhost:60565/api/home/testpost', 'A simple value').subscribe(r => console.info(r));
     }
 
 
@@ -54,9 +54,7 @@ export class CourseService {
       name: "John",
       surname: "Doe",
       age: 38
-    }).subscribe(r => console.log(r));
+    }).subscribe(r => console.info(r));
      
    }
-
-
 }
