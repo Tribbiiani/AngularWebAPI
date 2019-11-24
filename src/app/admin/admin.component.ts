@@ -1,25 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
-  selector: 'app-courses',
-  templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.css']
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css']
 })
-export class CoursesComponent implements OnInit {
-  
-
+export class AdminComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute
-    
   ) { }
 
   ngOnInit() {
+
     
-    
-   
   }
 
 }
