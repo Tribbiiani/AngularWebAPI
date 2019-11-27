@@ -3,6 +3,7 @@ import { CourseService } from 'src/app/shared/course.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
+import {LocationStrategy} from '@angular/common';
 
 @Component({
   selector: 'app-course',
@@ -13,7 +14,8 @@ import { ToastrService } from 'ngx-toastr';
 export class CourseComponent implements OnInit {
 
   constructor(private service : CourseService,
-    private toastr : ToastrService) { }
+    private toastr : ToastrService,
+    private url:LocationStrategy) { }
 
   ngOnInit() {
     this.resetForm(); 
@@ -34,29 +36,38 @@ export class CourseComponent implements OnInit {
   }
 
   onSubmit(form : NgForm){
-    if(form.value.CourseID ==null)
-      this.insertRecord(form);
-        else
-          this.updateRecord(form);
+    if(this.url.path()==='/admin-display')
+    {
 
-  }
+       if(form.value.CourseID ==null)
+       this.insertRecord(form);
+         else
+          this.updateRecord(form);
+      }
+   }
 
   insertRecord(form : NgForm){
-    this.service.postCourse(form.value).subscribe(res => {
-      this.toastr.success('Inserted Successfully','Course Register');  
-        this.resetForm(form);
-          this.service.refreshList();
-    });
+      if(this.url.path()==='/admin-display')
+      {
+        this.service.postCourse(form.value).subscribe(res => {
+          this.toastr.success('Inserted Successfully','Course Register');  
+            this.resetForm(form);
+              this.service.refreshList();
+        });
+      }
   }
 
   /**Subscribe to observable returned from putCourse in Course.service class */
   updateRecord(form: NgForm){
-    this.service.putCourse(form.value)
-    .subscribe(res => {
-      this.toastr.info('Updated Successfully','Course Register');  
-        this.resetForm(form);
-         this.service.refreshList();
-    });
-  }
+    if(this.url.path()==='/admin-display')
+    {  
+        this.service.putCourse(form.value)
+        .subscribe(res => {
+          this.toastr.info('Updated Successfully','Course Register');  
+            this.resetForm(form);
+            this.service.refreshList();
+        });
+      }
+    }
 
 }

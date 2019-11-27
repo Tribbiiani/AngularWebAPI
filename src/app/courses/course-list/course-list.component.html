@@ -1,6 +1,12 @@
 <table class="table-hover">
     <tr *ngFor="let  crs of service.list">
         <td (click)="populateForm(crs)">{{crs.Code}}-{{crs.CourseName}}</td>
-        <td><button (click)="onDelete(crs.CourseID)" class="btn-sm btn-outline-danger">X</button></td>
+        <td>
+               
+                <button (click)="onDelete(crs.CourseID)" class="btn-sm btn-outline-danger">X</button> 
+                        
+        
+        </td>
+            
     </tr>
 </table>
