@@ -31,9 +31,25 @@ div.validation-error{
   color: #dc3545;
 }
 
+/*
+Admin component
+**************************/
+.display-3{
+  text-align: center;
+
+}
+.leadW{
+  text-align: center;
+  font-size: x-large;
+}
+/**************************/
+
+
+
 .toast-bootstrap-compatibility-fix {
   opacity:1;
 }
+
 
 .toast-success{background-color:#51A351!important;}
 .toast-error{background-color:#BD362F!important;}

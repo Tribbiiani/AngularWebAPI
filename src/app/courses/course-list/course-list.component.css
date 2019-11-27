@@ -10,3 +10,6 @@
   border-style: solid;
   border-color: grey;
 } */
+tr:hover{
+  background-color: gold;
+}

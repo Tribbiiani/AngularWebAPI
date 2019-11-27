@@ -1,0 +1,18 @@
+ h1{
+   /* display: inline-block;*/
+    color:  black;
+     padding-left: 30%; 
+    font-size: 45px;
+} 
+
+
+#scroll {  
+  position: absolute;
+  margin-left: 461px;
+  margin-top: 35px;
+  width: 600px;
+  height: 414px;
+  top: -17px;
+  padding: 20,20,20,20;
+  overflow-y: auto;
+}

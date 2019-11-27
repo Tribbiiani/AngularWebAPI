@@ -14,6 +14,7 @@ import { CourseListComponent } from './courses/course-list/course-list.component
 import { CourseService } from './shared/course.service';
 import {FormsModule} from "@angular/forms";
 import { AdminComponent } from './admin/admin.component';
+import { AdminDisplayComponent } from './admin-display/admin-display.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AdminComponent } from './admin/admin.component';
     CoursesComponent,
     CourseComponent,
     CourseListComponent,
-    AdminComponent
+    AdminComponent,
+    AdminDisplayComponent
     
   ],
   imports: [
@@ -34,7 +36,9 @@ import { AdminComponent } from './admin/admin.component';
     ToastrModule.forRoot(),// ToastrModule added
     RouterModule.forRoot([
       { path: 'courses', component: CoursesComponent},
-      { path: 'admin', component: AdminComponent },
+     { path: 'admin', component: AdminComponent },
+     { path: 'admin-display', component: AdminDisplayComponent },
+
       { path: '**', redirectTo: 'courses' }
       
       
