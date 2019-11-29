@@ -17,6 +17,9 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminDisplayComponent } from './admin-display/admin-display.component';
 
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,9 @@ import { AdminDisplayComponent } from './admin-display/admin-display.component';
     CourseComponent,
     CourseListComponent,
     AdminComponent,
-    AdminDisplayComponent
+    AdminDisplayComponent,
+    
+    
     
   ],
   imports: [
@@ -33,19 +38,25 @@ import { AdminDisplayComponent } from './admin-display/admin-display.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,// required animations module
+    
     ToastrModule.forRoot(),// ToastrModule added
     RouterModule.forRoot([
-      { path: 'courses', component: CoursesComponent},
-     { path: 'admin', component: AdminComponent },
+      
+      
+      
+      
+
+     { path: 'courses', component: CoursesComponent},
+     { path: 'admin', component: AdminComponent},
      { path: 'admin-display', component: AdminDisplayComponent },
+    
 
       { path: '**', redirectTo: 'courses' }
-      
-      
-    ])
-
-    
+       
+    ])    
   ],
+
+  
   providers: [CourseService],
   bootstrap: [AppComponent]
 })

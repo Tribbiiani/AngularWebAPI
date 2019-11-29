@@ -15,6 +15,8 @@ export class CourseComponent implements OnInit {
 
   constructor(private service : CourseService,
     private toastr : ToastrService,
+    
+    //get url, only admin access to CRUD, others can read
     private url:LocationStrategy) { }
 
   ngOnInit() {

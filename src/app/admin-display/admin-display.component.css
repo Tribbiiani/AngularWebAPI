@@ -14,5 +14,9 @@
   height: 414px;
   top: -17px;
   padding: 20,20,20,20;
+  overflow-y: hidden;
+}
+
+#scroll:hover {
   overflow-y: auto;
 }
