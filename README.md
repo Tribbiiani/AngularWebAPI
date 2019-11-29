@@ -5,11 +5,8 @@ Next was to find a tutorial project that implements Angular client and WebAPI wi
 From here I can combine the understanding and the practical implementation of the project.
 
 Todo: 
- 1. Make a new admin.component that displays on a separate page. 
- 2. From admin.component create add/update/delete/read
- 3. Edit main page so it displays two component view where course categories is listed and user are
-  able to click on user to populate details into form. In main page the user should not be able to
-  edit categories or details.
+ 1. Implement CanActivate guard to restrict users access to CRUD at admin-display page
+ 2. Admin password verify at admin page before redirected to admin-display page
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
 
