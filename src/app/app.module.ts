@@ -40,20 +40,7 @@ import { AdminDisplayComponent } from './admin-display/admin-display.component';
     BrowserAnimationsModule,// required animations module
     
     ToastrModule.forRoot(),// ToastrModule added
-    RouterModule.forRoot([
-      
-      
-      
-      
-
-     { path: 'courses', component: CoursesComponent},
-     { path: 'admin', component: AdminComponent},
-     { path: 'admin-display', component: AdminDisplayComponent },
     
-
-      { path: '**', redirectTo: 'courses' }
-       
-    ])    
   ],
 
   
