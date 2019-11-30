@@ -7,7 +7,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
-import { RouterModule } from '@angular/router';
+
 
 import { CourseComponent } from './courses/course/course.component';
 import { CourseListComponent } from './courses/course-list/course-list.component';
@@ -15,6 +15,7 @@ import { CourseService } from './shared/course.service';
 import {FormsModule} from "@angular/forms";
 import { AdminComponent } from './admin/admin.component';
 import { AdminDisplayComponent } from './admin-display/admin-display.component';
+import { LoginComponent } from './courses/login/login.component';
 
 
 
@@ -28,6 +29,7 @@ import { AdminDisplayComponent } from './admin-display/admin-display.component';
     CourseListComponent,
     AdminComponent,
     AdminDisplayComponent,
+    LoginComponent,
     
     
     
@@ -40,20 +42,7 @@ import { AdminDisplayComponent } from './admin-display/admin-display.component';
     BrowserAnimationsModule,// required animations module
     
     ToastrModule.forRoot(),// ToastrModule added
-    RouterModule.forRoot([
-      
-      
-      
-      
-
-     { path: 'courses', component: CoursesComponent},
-     { path: 'admin', component: AdminComponent},
-     { path: 'admin-display', component: AdminDisplayComponent },
     
-
-      { path: '**', redirectTo: 'courses' }
-       
-    ])    
   ],
 
   
