@@ -5,8 +5,7 @@ Next was to find a tutorial project that implements Angular client and WebAPI wi
 From here I can combine the understanding and the practical implementation of the project.
 
 Todo: 
- 1. Implement CanActivate guard to restrict users access to CRUD at admin-display page
- 2. Admin password verify at admin page before redirected to admin-display page
+ 1. Admin password verify at admin page before redirected to admin-display page
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
 
